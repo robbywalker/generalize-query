@@ -11,7 +11,7 @@ PATTERNS = [
   ('%(first_name)s %(last_name)s', 3),
   ('%(place)s %(word)s', 2),
   ('%(word)s %(place)s', 2),
-  ('%(word)s %(place)s %(word)s', 1),
+  ('%(word)s %(place)s %(wordtwo)s', 1),
   ('%(first_name)s %(word)s', 1),
 ]
 
@@ -47,8 +47,9 @@ def main():
 		lastname = random.choice(lastnames)
 		place = random.choice(places)
 		word = choice_prefer_front(words)
+		word2 = choice_prefer_front(words)
 		pattern = weighted_choice(PATTERNS)
-		print pattern % {'first_name': firstname, 'last_name': lastname, 'word': word, 'place': place}
+		print pattern % {'first_name': firstname, 'last_name': lastname, 'word': word, 'place': place, 'wordtwo': word2}
 
 
 if __name__ == '__main__':
